@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+    SIGNUP - TITLE
+
+{% endblock %}
+
+{% block body %}
+    </br>
+
+    {% if error %}
+
+        {{ error }}
+
+    {% endif %}
+
+    </br>
+
+
+    <h1> Sign Up!</h1>
+
+    <form method="POST" action="{% url "signup" %}">
+        {% csrf_token %}
+        Username: </br>
+        <input type="text" name="username"/> </br>
+        Password: </br>
+        <input type="password" name="password1"/> </br>
+        Retype Password: </br>
+        <input type="password" name="password2"/> </br></br>
+
+        <input class="btn btn-primary" type="submit" value="Sign Up!"/>
+
+    </form>
+
+{% endblock %}
